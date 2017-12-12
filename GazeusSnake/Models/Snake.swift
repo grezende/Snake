@@ -8,12 +8,21 @@
 
 import SpriteKit
 
+enum directions{
+    
+    case up
+    case down
+    case right
+    case left
+}
+
 class Snake{
     
     var head: SnakeHead?
     var segments: [SnakeSegment] = []
     let initialNumberOfSegments = 3
     var segmentSize: CGSize?
+    var currentDirection = directions.right
     
     func setSnake(scene: GameScene){
         
@@ -40,5 +49,28 @@ class Snake{
         }
         
         scene.addChild(head!)
+    }
+    
+    func moveSnake(){
+        
+        var lastPosition: CGPoint
+        
+        switch self.currentDirection {
+            
+        case directions.right:
+            
+            lastPosition = (self.head?.position)!
+            head?.position.x += (segmentSize?.width)!
+            
+            for s in self.segments{
+                
+                let tempLastPosition = s.position
+                s.position = lastPosition
+                lastPosition = tempLastPosition
+            }
+            
+        default:
+            break
+        }
     }
 }

@@ -21,6 +21,17 @@ class GameScene: SKScene {
         backgroundManager.setBorders(scene: self.scene as! GameScene)
         
         snake.setSnake(scene: self.scene as! GameScene)
+        
+        let singleMovement = SKAction.run {
+            
+            self.snake.moveSnake()
+        }
+        
+        let waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.6)
+        
+        let moveSequence = SKAction.sequence([singleMovement, waitTimeBeetweenMovements])
+        
+        self.run(SKAction.repeatForever(moveSequence))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,6 +41,5 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
        
-        
     }
 }
