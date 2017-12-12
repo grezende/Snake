@@ -12,12 +12,15 @@ import GameplayKit
 class GameScene: SKScene {
     
     let backgroundManager = BackgroundManager()
+    let snake = Snake()
     
     override func didMove(to view: SKView) {
        
         backgroundManager.setBackgroundImage(scene: self.scene as! GameScene)
         
         backgroundManager.setBorders(scene: self.scene as! GameScene)
+        
+        snake.setSnake(scene: self.scene as! GameScene)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

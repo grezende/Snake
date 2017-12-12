@@ -32,11 +32,11 @@ class BackgroundManager: SKSpriteNode{
         let sceneSize = scene.size
         
         self.topBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
-            width: UIScreen.main.bounds.width / 20 * 18, height: 3.0
+            width: UIScreen.main.bounds.width / 40 * 38, height: 3.0
         ))
         
         topBorder?.position = CGPoint(
-            x: sceneSize.width / 20 + (topBorder?.size.width)! / 2,
+            x: sceneSize.width / 40 + (topBorder?.size.width)! / 2,
             y: sceneSize.height - sceneSize.height / 20
         )
         
@@ -45,10 +45,10 @@ class BackgroundManager: SKSpriteNode{
         //        ceiling.physicsBody?.categoryBitMask = PhysicsCategory.Floor
         
         self.bottomBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
-            width: UIScreen.main.bounds.width / 20 * 18, height: 3.0))
+            width: UIScreen.main.bounds.width / 40 * 38, height: 3.0))
         
         bottomBorder?.position = CGPoint(
-            x: sceneSize.width / 20 + (bottomBorder?.size.width)! / 2,
+            x: sceneSize.width / 40 + (bottomBorder?.size.width)! / 2,
             y: sceneSize.height / 20
         )
         
@@ -57,10 +57,10 @@ class BackgroundManager: SKSpriteNode{
         //        ceiling.physicsBody?.categoryBitMask = PhysicsCategory.Floor
         
         self.leftBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
-            width: 3.0, height: UIScreen.main.bounds.height / 10 * 9))
+            width: 3.0, height: UIScreen.main.bounds.height / 20 * 18))
         
         leftBorder?.position = CGPoint(
-            x: sceneSize.width / 20 + (leftBorder?.size.width)! / 2,
+            x: sceneSize.width / 40 + (leftBorder?.size.width)! / 2,
             y: sceneSize.height / 20 + (leftBorder?.size.height)! / 2
         )
         
@@ -69,10 +69,10 @@ class BackgroundManager: SKSpriteNode{
         //        ceiling.physicsBody?.categoryBitMask = PhysicsCategory.Floor
         
         self.rightBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
-            width: 3.0, height: UIScreen.main.bounds.height / 10 * 9))
+            width: 3.0, height: UIScreen.main.bounds.height / 20 * 18))
         
         rightBorder?.position = CGPoint(
-            x: sceneSize.width / 20 * 19 + (rightBorder?.size.width)! / 2,
+            x: sceneSize.width / 40 * 39 + (rightBorder?.size.width)! / 2,
             y: sceneSize.height / 20 + (rightBorder?.size.height)! / 2
         )
         

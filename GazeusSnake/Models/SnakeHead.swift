@@ -6,4 +6,9 @@
 //  Copyright © 2017 Gabriel Rezende. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+class SnakeHead: SKSpriteNode{
+    
+    
+}
