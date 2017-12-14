@@ -69,7 +69,6 @@ class BackgroundManager: SKSpriteNode{
                                                height: sceneSize.height / 20))
             
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
-            hitbox.physicsBody?.isDynamic = false
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: 0, y: hitbox.size.height / 2)
             newBorder.addChild(hitbox)
@@ -87,7 +86,6 @@ class BackgroundManager: SKSpriteNode{
                                                height: sceneSize.height / 20))
             
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
-            hitbox.physicsBody?.isDynamic = false
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: 0, y: -hitbox.size.height / 2)
             newBorder.addChild(hitbox)
@@ -105,7 +103,6 @@ class BackgroundManager: SKSpriteNode{
                                                height: newBorder.size.height))
             
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
-            hitbox.physicsBody?.isDynamic = false
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: -hitbox.size.width / 2, y: 0)
             newBorder.addChild(hitbox)
@@ -123,7 +120,6 @@ class BackgroundManager: SKSpriteNode{
                                                height: newBorder.size.height))
             
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
-            hitbox.physicsBody?.isDynamic = false
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: hitbox.size.width / 2, y: 0)
             newBorder.addChild(hitbox)

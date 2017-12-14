@@ -30,9 +30,9 @@ class SnakeHead: SKSpriteNode{
                                     y: self.size.height / 2 - collider.size.height)
         
         collider.physicsBody = SKPhysicsBody(rectangleOf: collider.size)
-        collider.physicsBody?.isDynamic = true
         collider.physicsBody?.categoryBitMask = collisionValue.snakeHead.rawValue
-        collider.physicsBody?.contactTestBitMask = 0
+        collider.physicsBody?.contactTestBitMask = collisionValue.snakeSegment.rawValue |
+            collisionValue.border.rawValue
         
         self.addChild(collider)
         
