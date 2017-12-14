@@ -36,7 +36,7 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        
+        snake.currentDirection = directions.up
     }
     
     override func update(_ currentTime: TimeInterval) {

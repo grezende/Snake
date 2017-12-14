@@ -69,6 +69,18 @@ class Snake{
                 lastPosition = tempLastPosition
             }
             
+        case directions.up:
+            
+            lastPosition = (self.head?.position)!
+            head?.position.y += (segmentSize?.height)!
+            
+            for s in self.segments{
+                
+                let tempLastPosition = s.position
+                s.position = lastPosition
+                lastPosition = tempLastPosition
+            }
+            
         default:
             break
         }
