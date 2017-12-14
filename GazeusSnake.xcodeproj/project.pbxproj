@@ -95,6 +95,8 @@
 				C117A5C61FE0496700353990 /* Models */,
 				C117A5C51FE0492900353990 /* SnakeScene */,
 				C117A5A71FE0332800353990 /* Assets.xcassets */,
+				C117A5A21FE0332800353990 /* GameViewController.swift */,
+				C117A5A41FE0332800353990 /* Main.storyboard */,
 				C117A5A91FE0332800353990 /* LaunchScreen.storyboard */,
 				C117A5AC1FE0332800353990 /* Info.plist */,
 			);
@@ -123,8 +125,6 @@
 			children = (
 				C117A5C21FE0427600353990 /* Background */,
 				C117A5A01FE0332800353990 /* GameScene.swift */,
-				C117A5A21FE0332800353990 /* GameViewController.swift */,
-				C117A5A41FE0332800353990 /* Main.storyboard */,
 			);
 			path = SnakeScene;
 			sourceTree = "<group>";

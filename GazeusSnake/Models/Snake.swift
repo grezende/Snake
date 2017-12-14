@@ -20,7 +20,7 @@ class Snake{
     
     var head: SnakeHead?
     var segments: [SnakeSegment] = []
-    let initialNumberOfSegments = 3
+    let initialNumberOfSegments = 4
     var segmentSize: CGSize?
     var currentDirection = directions.right
     
@@ -30,8 +30,7 @@ class Snake{
                                   height: scene.size.height / 20
         )
         
-        self.head = SnakeHead(color: SKColor.green,
-                              size: self.segmentSize!)
+        self.head = SnakeHead(color: SKColor.green, size: self.segmentSize!)
         
         self.head?.position = CGPoint(
             x: scene.size.width / 2 + (self.head?.size.width)! / 2,
@@ -41,9 +40,12 @@ class Snake{
         for i in 1...initialNumberOfSegments{
             
             let newSegment = SnakeSegment(color: SKColor.green, size: self.segmentSize!)
+            
             newSegment.position = CGPoint(
                 x: (self.head?.position.x)! - CGFloat(i) * (segmentSize?.width)!,
                 y: (self.head?.position.y)!)
+            
+            
             self.segments.append(newSegment)
         }
         
@@ -64,18 +66,23 @@ class Snake{
             
         case directions.right:
             
+            head?.zRotation = 0
             head?.position.x += (segmentSize?.width)!
             
         case directions.left:
             
+            head?.yScale *= -1
+            head?.zRotation = CGFloat(Double.pi)
             head?.position.x -= (segmentSize?.width)!
             
         case directions.up:
             
+            head?.zRotation = CGFloat(Double.pi) / 2
             head?.position.y += (segmentSize?.height)!
             
         case directions.down:
 
+            head?.zRotation = 3 * CGFloat(Double.pi) / 2
             head?.position.y -= (segmentSize?.height)!
         }
         

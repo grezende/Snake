@@ -21,6 +21,22 @@ class SnakeHead: SKSpriteNode{
                                y: self.size.height / 4 * 3 - self.size.height / 2)
         
         self.addChild(eye)
+        
+        let collider = SKSpriteNode(
+            color: SKColor.clear,
+            size: CGSize(width: 1, height: self.size.height / 2 )
+        )
+        collider.position = CGPoint(x: 0,
+                                    y: self.size.height / 2 - collider.size.height)
+        
+        collider.physicsBody = SKPhysicsBody(rectangleOf: collider.size)
+        collider.physicsBody?.isDynamic = true
+        collider.physicsBody?.categoryBitMask = collisionValue.snakeHead.rawValue
+        collider.physicsBody?.contactTestBitMask = 0
+        
+        self.addChild(collider)
+        
+        self.zPosition = layer.objects.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

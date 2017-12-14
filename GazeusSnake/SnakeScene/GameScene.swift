@@ -9,12 +9,15 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let backgroundManager = BackgroundManager()
     let snake = Snake()
     
     override func didMove(to view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
        
         backgroundManager.setBackgroundImage(scene: self.scene as! GameScene)
         
@@ -91,6 +94,12 @@ class GameScene: SKScene {
         let moveSequence = SKAction.sequence([singleMovement, waitTimeBeetweenMovements])
         
         self.run(SKAction.repeatForever(moveSequence))
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        print("Objeto colidido 1: \(contact.bodyA.categoryBitMask)")
+        print("Objeto colidido 2: \(contact.bodyB.categoryBitMask)")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

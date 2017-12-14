@@ -52,6 +52,7 @@ class BackgroundManager: SKSpriteNode{
         
         var newBorder: SKSpriteNode
         let sceneSize = scene.size
+        var hitbox: SKSpriteNode
         
         switch type {
             
@@ -63,6 +64,15 @@ class BackgroundManager: SKSpriteNode{
                 x: sceneSize.width / 40 + newBorder.size.width / 2,
                 y: sceneSize.height - sceneSize.height / 20
             )
+            hitbox = SKSpriteNode(color: SKColor.clear,
+                                  size: CGSize(width: newBorder.size.width,
+                                               height: sceneSize.height / 20))
+            
+            hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
+            hitbox.physicsBody?.isDynamic = false
+            hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
+            hitbox.position = CGPoint(x: 0, y: hitbox.size.height / 2)
+            newBorder.addChild(hitbox)
             
         case .bottom:
             newBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
@@ -72,6 +82,15 @@ class BackgroundManager: SKSpriteNode{
                 x: sceneSize.width / 40 + newBorder.size.width / 2,
                 y: sceneSize.height / 20
             )
+            hitbox = SKSpriteNode(color: SKColor.clear,
+                                  size: CGSize(width: newBorder.size.width,
+                                               height: sceneSize.height / 20))
+            
+            hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
+            hitbox.physicsBody?.isDynamic = false
+            hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
+            hitbox.position = CGPoint(x: 0, y: -hitbox.size.height / 2)
+            newBorder.addChild(hitbox)
             
         case .left:
             newBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
@@ -81,6 +100,15 @@ class BackgroundManager: SKSpriteNode{
                 x: sceneSize.width / 40 + newBorder.size.width / 2,
                 y: sceneSize.height / 20 + newBorder.size.height / 2
             )
+            hitbox = SKSpriteNode(color: SKColor.clear,
+                                  size: CGSize(width: sceneSize.width / 40,
+                                               height: newBorder.size.height))
+            
+            hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
+            hitbox.physicsBody?.isDynamic = false
+            hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
+            hitbox.position = CGPoint(x: -hitbox.size.width / 2, y: 0)
+            newBorder.addChild(hitbox)
             
         case .right:
             newBorder = SKSpriteNode(color: UIColor.white, size: CGSize(
@@ -90,11 +118,18 @@ class BackgroundManager: SKSpriteNode{
                 x: sceneSize.width / 40 * 39 + newBorder.size.width / 2,
                 y: sceneSize.height / 20 + newBorder.size.height / 2
             )
+            hitbox = SKSpriteNode(color: SKColor.clear,
+                                  size: CGSize(width: sceneSize.width / 40,
+                                               height: newBorder.size.height))
+            
+            hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
+            hitbox.physicsBody?.isDynamic = false
+            hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
+            hitbox.position = CGPoint(x: hitbox.size.width / 2, y: 0)
+            newBorder.addChild(hitbox)
         }
         
-        newBorder.physicsBody = SKPhysicsBody(rectangleOf: (newBorder.size))
-        newBorder.physicsBody?.isDynamic = false
-        newBorder.physicsBody?.categoryBitMask = collisionValue.border.rawValue
+        newBorder.zPosition = layer.objects.rawValue
         
         return newBorder
     }
