@@ -30,7 +30,7 @@ class BackgroundManager: SKSpriteNode{
         background.size.height = (scene.size.height)
         background.position = CGPoint(x: (scene.size.width) / 2,
                                       y: (scene.size.height) / 2)
-        background.zPosition = -3
+        background.zPosition = layer.background.rawValue
         
         scene.addChild(background)
     }

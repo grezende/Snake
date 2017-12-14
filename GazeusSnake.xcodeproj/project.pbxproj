@@ -19,6 +19,7 @@
 		C117A5CA1FE0499400353990 /* SnakeHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5C91FE0499400353990 /* SnakeHead.swift */; };
 		C117A5CC1FE0499E00353990 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5CB1FE0499E00353990 /* Snake.swift */; };
 		C117A5CF1FE2FF9200353990 /* CollisionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5CE1FE2FF9200353990 /* CollisionValues.swift */; };
+		C117A5D31FE3080400353990 /* LayerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5D21FE3080400353990 /* LayerValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C117A5C91FE0499400353990 /* SnakeHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeHead.swift; sourceTree = "<group>"; };
 		C117A5CB1FE0499E00353990 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		C117A5CE1FE2FF9200353990 /* CollisionValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionValues.swift; sourceTree = "<group>"; };
+		C117A5D21FE3080400353990 /* LayerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				C117A59A1FE0332800353990 /* AppDelegate.swift */,
 				C117A5CE1FE2FF9200353990 /* CollisionValues.swift */,
+				C117A5D21FE3080400353990 /* LayerValues.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C117A5CA1FE0499400353990 /* SnakeHead.swift in Sources */,
+				C117A5D31FE3080400353990 /* LayerValues.swift in Sources */,
 				C117A5A11FE0332800353990 /* GameScene.swift in Sources */,
 				C117A5A31FE0332800353990 /* GameViewController.swift in Sources */,
 				C117A59B1FE0332800353990 /* AppDelegate.swift in Sources */,
