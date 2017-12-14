@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let backgroundManager = BackgroundManager()
-    let snake = Snake()
+    var snake = Snake()
     
     override func didMove(to view: SKView) {
         
@@ -22,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backgroundManager.setBackgroundImage(scene: self.scene as! GameScene)
         
         backgroundManager.setBorders(scene: self.scene as! GameScene)
+        
+        backgroundManager.setScoreLabel(scene: self)
         
         snake.setSnake(scene: self.scene as! GameScene)
         
@@ -98,8 +100,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        print("Objeto colidido 1: \(contact.bodyA.categoryBitMask)")
-        print("Objeto colidido 2: \(contact.bodyB.categoryBitMask)")
+        scene?.isPaused = true
+        
+        let gameOverViewController = GameOverView()
+        gameOverViewController.scene = self.scene as? GameScene
+        scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

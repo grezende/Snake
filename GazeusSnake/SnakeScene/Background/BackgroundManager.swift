@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class BackgroundManager: SKSpriteNode{
+class BackgroundManager{
     
     enum borderType{
         
@@ -23,6 +23,8 @@ class BackgroundManager: SKSpriteNode{
     var leftBorder: SKSpriteNode?
     var rightBorder: SKSpriteNode?
     var bottomBorder: SKSpriteNode?
+    
+    var scoreLabel: SKLabelNode?
     
     func setBackgroundImage(scene: GameScene){
     
@@ -128,5 +130,17 @@ class BackgroundManager: SKSpriteNode{
         newBorder.zPosition = layer.objects.rawValue
         
         return newBorder
+    }
+    
+    func setScoreLabel(scene: GameScene){
+        
+        self.scoreLabel = SKLabelNode(fontNamed: "GillSans-Light")
+        self.scoreLabel?.text = "0"
+        self.scoreLabel?.fontSize = 120
+        self.scoreLabel?.fontColor = SKColor(white: 1, alpha: 0.4)
+        self.scoreLabel?.position = CGPoint(x: scene.size.width / 2,
+                                            y: scene.size.height / 2)
+        self.scoreLabel?.zPosition = layer.score.rawValue
+        scene.addChild(scoreLabel!)
     }
 }

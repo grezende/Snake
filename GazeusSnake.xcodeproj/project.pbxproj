@@ -20,6 +20,8 @@
 		C117A5CC1FE0499E00353990 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5CB1FE0499E00353990 /* Snake.swift */; };
 		C117A5CF1FE2FF9200353990 /* CollisionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5CE1FE2FF9200353990 /* CollisionValues.swift */; };
 		C117A5D31FE3080400353990 /* LayerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5D21FE3080400353990 /* LayerValues.swift */; };
+		C117A5D71FE3326900353990 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117A5D51FE3326900353990 /* GameOverView.swift */; };
+		C117A5D81FE3326900353990 /* GameOverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C117A5D61FE3326900353990 /* GameOverView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		C117A5CB1FE0499E00353990 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		C117A5CE1FE2FF9200353990 /* CollisionValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionValues.swift; sourceTree = "<group>"; };
 		C117A5D21FE3080400353990 /* LayerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerValues.swift; sourceTree = "<group>"; };
+		C117A5D51FE3326900353990 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		C117A5D61FE3326900353990 /* GameOverView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameOverView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		C117A5C51FE0492900353990 /* SnakeScene */ = {
 			isa = PBXGroup;
 			children = (
+				C117A5D41FE3321B00353990 /* GameOverView */,
 				C117A5C21FE0427600353990 /* Background */,
 				C117A5A01FE0332800353990 /* GameScene.swift */,
 			);
@@ -147,6 +152,15 @@
 				C117A5D21FE3080400353990 /* LayerValues.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		C117A5D41FE3321B00353990 /* GameOverView */ = {
+			isa = PBXGroup;
+			children = (
+				C117A5D51FE3326900353990 /* GameOverView.swift */,
+				C117A5D61FE3326900353990 /* GameOverView.xib */,
+			);
+			path = GameOverView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,7 @@
 			files = (
 				C117A5A61FE0332800353990 /* Main.storyboard in Resources */,
 				C117A5A81FE0332800353990 /* Assets.xcassets in Resources */,
+				C117A5D81FE3326900353990 /* GameOverView.xib in Resources */,
 				C117A5AB1FE0332800353990 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C117A5D71FE3326900353990 /* GameOverView.swift in Sources */,
 				C117A5CA1FE0499400353990 /* SnakeHead.swift in Sources */,
 				C117A5D31FE3080400353990 /* LayerValues.swift in Sources */,
 				C117A5A11FE0332800353990 /* GameScene.swift in Sources */,

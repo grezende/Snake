@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverView" customModule="GazeusSnake" customModuleProvider="target">
+            <connections>
+                <outlet property="retryButton" destination="4Br-67-miH" id="NFx-ig-SsL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-FY-d4t">
+                    <rect key="frame" x="113.5" y="64" width="341" height="192"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Putz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-kZ-d6S">
+                            <rect key="frame" x="121" y="25" width="100.5" height="55"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Br-67-miH">
+                            <rect key="frame" x="103" y="120" width="136" height="35"/>
+                            <color key="backgroundColor" red="1" green="0.66592100419317768" blue="0.29006879003715524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="De novo">
+                                <color key="titleColor" red="0.22318895752741086" green="0.0059271195550584244" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="4Br-67-miH" secondAttribute="bottom" constant="37" id="8hz-UJ-5ig"/>
+                        <constraint firstItem="fN7-kZ-d6S" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" id="DSB-pP-jcO"/>
+                        <constraint firstItem="4Br-67-miH" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.4" id="JFW-84-tES"/>
+                        <constraint firstItem="4Br-67-miH" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" id="OBT-pq-Fhj"/>
+                        <constraint firstItem="fN7-kZ-d6S" firstAttribute="top" secondItem="Aum-FY-d4t" secondAttribute="top" constant="25" id="Ux7-1U-gYC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Aum-FY-d4t" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4in-3e-Opk"/>
+                <constraint firstItem="Aum-FY-d4t" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5W2-Ar-lQA"/>
+                <constraint firstItem="Aum-FY-d4t" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="UMY-91-Nes"/>
+                <constraint firstItem="Aum-FY-d4t" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="bpq-ce-3VZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

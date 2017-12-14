@@ -54,6 +54,8 @@ class Snake{
         }
         
         scene.addChild(head!)
+        
+        self.currentDirection = .right
     }
     
     func moveSnake(){
@@ -92,5 +94,17 @@ class Snake{
             s.position = lastPosition
             lastPosition = tempLastPosition
         }
+    }
+    
+    func destroySnake(scene: GameScene){
+        
+        self.head?.removeFromParent()
+        
+        for s in self.segments{
+            
+            s.removeFromParent()
+        }
+        
+        self.segments = []
     }
 }
