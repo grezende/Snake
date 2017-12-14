@@ -22,6 +22,65 @@ class GameScene: SKScene {
         
         snake.setSnake(scene: self.scene as! GameScene)
         
+        self.startSnakeMovement()
+        
+        self.setUpSwipeDetectors()
+    }
+    
+    func setUpSwipeDetectors(){
+        
+       let swipeRightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDetected(sender:)))
+        swipeRightRecognizer.direction = .right
+        
+        let swipeLeftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDetected(sender:)))
+        swipeLeftRecognizer.direction = .left
+        
+        let swipeUpRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDetected(sender:)))
+        swipeUpRecognizer.direction = .up
+        
+        let swipeDownRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeDetected(sender:)))
+        swipeDownRecognizer.direction = .down
+            
+        self.view?.addGestureRecognizer(swipeRightRecognizer)
+        self.view?.addGestureRecognizer(swipeLeftRecognizer)
+        self.view?.addGestureRecognizer(swipeUpRecognizer)
+        self.view?.addGestureRecognizer(swipeDownRecognizer)
+    }
+    
+    @objc func swipeDetected(sender: UISwipeGestureRecognizer){
+        
+        switch sender.direction {
+            
+        case .right:
+            if(self.snake.currentDirection != .left){
+                
+                snake.currentDirection = .right
+            }
+            
+        case .left:
+            if(self.snake.currentDirection != .right){
+                
+                snake.currentDirection = .left
+            }
+            
+        case .up:
+            if(self.snake.currentDirection != .down){
+                
+                snake.currentDirection = .up
+            }
+        case .down:
+            if(self.snake.currentDirection != .up){
+                
+                snake.currentDirection = .down
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    func startSnakeMovement(){
+        
         let singleMovement = SKAction.run {
             
             self.snake.moveSnake()
@@ -36,10 +95,9 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        snake.currentDirection = directions.up
     }
     
     override func update(_ currentTime: TimeInterval) {
-       
+        
     }
 }

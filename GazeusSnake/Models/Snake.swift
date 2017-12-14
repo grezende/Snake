@@ -58,34 +58,32 @@ class Snake{
         
         var lastPosition: CGPoint
         
+        lastPosition = (self.head?.position)!
+        
         switch self.currentDirection {
             
         case directions.right:
             
-            lastPosition = (self.head?.position)!
             head?.position.x += (segmentSize?.width)!
             
-            for s in self.segments{
-                
-                let tempLastPosition = s.position
-                s.position = lastPosition
-                lastPosition = tempLastPosition
-            }
+        case directions.left:
+            
+            head?.position.x -= (segmentSize?.width)!
             
         case directions.up:
             
-            lastPosition = (self.head?.position)!
             head?.position.y += (segmentSize?.height)!
             
-            for s in self.segments{
-                
-                let tempLastPosition = s.position
-                s.position = lastPosition
-                lastPosition = tempLastPosition
-            }
+        case directions.down:
+
+            head?.position.y -= (segmentSize?.height)!
+        }
+        
+        for s in self.segments{
             
-        default:
-            break
+            let tempLastPosition = s.position
+            s.position = lastPosition
+            lastPosition = tempLastPosition
         }
     }
 }
