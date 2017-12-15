@@ -14,8 +14,11 @@ class SnakeSegment: SKSpriteNode{
         
         super.init(texture: texture, color: color, size: size)
         
+        let hitbox = CGSize(width: 3 * self.size.width / 4,
+                            height: 3 * self.size.height / 4)
+        
         self.zPosition = layer.objects.rawValue
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: hitbox)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = collisionValue.snakeSegment.rawValue
     }

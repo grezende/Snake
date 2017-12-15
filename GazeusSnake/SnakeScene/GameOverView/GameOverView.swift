@@ -23,7 +23,8 @@ class GameOverView: UIViewController {
         
         scene?.snake.destroySnake(scene: scene!)
         scene?.snake.setSnake(scene: scene!)
-        // Reset score
+        scene?.score = 0
+        scene?.backgroundManager.updateScoreLabel(score: (scene?.score)!)
         scene?.isPaused = false
         self.dismiss(animated: true, completion: nil)
     }
