@@ -33,7 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.setUpSwipeDetectors()
         
-        appleManager.setApple(scene: self)
+        appleManager.setApple(scene: self, snake: self.snake)
     }
     
     func setUpSwipeDetectors(){
@@ -95,7 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.snake.moveSnake()
         }
         
-        let waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.6)
+        let waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
         
         let moveSequence = SKAction.sequence([singleMovement, waitTimeBeetweenMovements])
         
@@ -113,6 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.score += 1
             backgroundManager.updateScoreLabel(score: self.score)
             appleManager.resetApple(scene: self)
+            self.snake.addSegment(scene: self)
         }
         
         else{
@@ -122,8 +123,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gameOverViewController.scene = self.scene as? GameScene
             scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
         }
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

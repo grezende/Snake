@@ -23,6 +23,7 @@ class Snake{
     let initialNumberOfSegments = 4
     var segmentSize: CGSize?
     var currentDirection = directions.right
+    var lastSegmentPosition = CGPoint(x: 0, y: 0)
     
     func setSnake(scene: GameScene){
         
@@ -31,8 +32,6 @@ class Snake{
         )
         
         self.head = SnakeHead(color: SKColor.green, size: self.segmentSize!)
-        
-        print("Tamanho da cabeça: \(head?.size.height)")
         
         self.head?.position = CGPoint(
             x: scene.size.width / 2 + (self.head?.size.width)! / 2,
@@ -62,9 +61,7 @@ class Snake{
     
     func moveSnake(){
         
-        var lastPosition: CGPoint
-        
-        lastPosition = (self.head?.position)!
+        self.lastSegmentPosition = (self.head?.position)!
         
         switch self.currentDirection {
             
@@ -93,8 +90,8 @@ class Snake{
         for s in self.segments{
             
             let tempLastPosition = s.position
-            s.position = lastPosition
-            lastPosition = tempLastPosition
+            s.position = self.lastSegmentPosition
+            self.lastSegmentPosition = tempLastPosition
         }
     }
     
@@ -112,6 +109,12 @@ class Snake{
     
     func addSegment(scene: GameScene){
         
+        let newSegment = SnakeSegment(color: SKColor.green, size: self.segmentSize!)
         
+        newSegment.position = CGPoint(
+            x: self.lastSegmentPosition.x, y: self.lastSegmentPosition.y)
+        self.segments.append(newSegment)
+        
+        scene.addChild(newSegment)
     }
 }
