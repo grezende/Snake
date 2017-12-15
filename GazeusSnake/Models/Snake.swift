@@ -32,6 +32,8 @@ class Snake{
         
         self.head = SnakeHead(color: SKColor.green, size: self.segmentSize!)
         
+        print("Tamanho da cabeça: \(head?.size.height)")
+        
         self.head?.position = CGPoint(
             x: scene.size.width / 2 + (self.head?.size.width)! / 2,
             y: scene.size.height / 2 + (self.head?.size.height)! / 2
@@ -106,5 +108,10 @@ class Snake{
         }
         
         self.segments = []
+    }
+    
+    func addSegment(scene: GameScene){
+        
+        
     }
 }

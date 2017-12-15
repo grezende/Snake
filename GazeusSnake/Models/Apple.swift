@@ -1,14 +1,14 @@
 //
-//  SnakeSegment.swift
+//  Apple.swift
 //  GazeusSnake
 //
-//  Created by Gabriel Rezende on 12/12/17.
+//  Created by Gabriel Rezende on 14/12/17.
 //  Copyright © 2017 Gabriel Rezende. All rights reserved.
 //
 
 import SpriteKit
 
-class SnakeSegment: SKSpriteNode{
+class Apple: SKSpriteNode{
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         
@@ -16,8 +16,7 @@ class SnakeSegment: SKSpriteNode{
         
         self.zPosition = layer.objects.rawValue
         self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
-        self.physicsBody?.isDynamic = true
-        self.physicsBody?.categoryBitMask = collisionValue.snakeSegment.rawValue
+        self.physicsBody?.categoryBitMask = collisionValue.apple.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {

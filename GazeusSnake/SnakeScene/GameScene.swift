@@ -12,7 +12,9 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let backgroundManager = BackgroundManager()
+    let appleManager = AppleManager()
     var snake = Snake()
+    var score = 0
     
     override func didMove(to view: SKView) {
         
@@ -30,6 +32,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.startSnakeMovement()
         
         self.setUpSwipeDetectors()
+        
+        appleManager.setApple(scene: self)
     }
     
     func setUpSwipeDetectors(){
@@ -100,11 +104,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        scene?.isPaused = true
+        print("Corpo A: \(contact.bodyA.categoryBitMask)")
+        print("Corpo B: \(contact.bodyB.categoryBitMask)")
         
-        let gameOverViewController = GameOverView()
-        gameOverViewController.scene = self.scene as? GameScene
-        scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
+        if(contact.bodyA.categoryBitMask == collisionValue.apple.rawValue ||
+            contact.bodyB.categoryBitMask == collisionValue.apple.rawValue){
+            
+            self.score += 1
+            backgroundManager.updateScoreLabel(score: self.score)
+            appleManager.resetApple(scene: self)
+        }
+        
+        else{
+            scene?.isPaused = true
+            
+            let gameOverViewController = GameOverView()
+            gameOverViewController.scene = self.scene as? GameScene
+            scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
+        }
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

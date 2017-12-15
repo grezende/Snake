@@ -143,4 +143,9 @@ class BackgroundManager{
         self.scoreLabel?.zPosition = layer.score.rawValue
         scene.addChild(scoreLabel!)
     }
+    
+    func updateScoreLabel(score: Int){
+        
+        self.scoreLabel?.text = "\(score)"
+    }
 }
