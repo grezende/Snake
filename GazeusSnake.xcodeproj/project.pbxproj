@@ -120,21 +120,21 @@
 			path = GazeusSnakeTests;
 			sourceTree = "<group>";
 		};
-		C117A5C21FE0427600353990 /* Background */ = {
+		C117A5C21FE0427600353990 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C117A5DC1FE343B000353990 /* AppleManager.swift */,
 				C117A5C01FE0402900353990 /* BackgroundManager.swift */,
 			);
-			path = Background;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C117A5C51FE0492900353990 /* SnakeScene */ = {
 			isa = PBXGroup;
 			children = (
 				C117A5D41FE3321B00353990 /* GameOverView */,
-				C117A5C21FE0427600353990 /* Background */,
+				C117A5C21FE0427600353990 /* Managers */,
 				C117A5A01FE0332800353990 /* GameScene.swift */,
-				C117A5DC1FE343B000353990 /* AppleManager.swift */,
 			);
 			path = SnakeScene;
 			sourceTree = "<group>";
