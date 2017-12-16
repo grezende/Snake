@@ -18,11 +18,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var snake = Snake()
     var score = 0
     var difficulty: Int = 1
+    var spaceSize = CGSize(width: 0, height: 0)
     
     override func didMove(to view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        self.spaceSize = CGSize(width: self.size.width / 40,
+                                height: self.size.height / 20)
        
         backgroundManager.setBackgroundImage(scene: self.scene as! GameScene)
         
@@ -95,7 +98,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let singleMovement = SKAction.run {
             
-            self.snake.moveSnake()
+            if(self.checkCollisionWithBorder()){
+                
+                self.gameOver()
+            }
+            else{
+                
+                self.snake.moveSnake()
+            }
         }
         
         let waitTimeBeetweenMovements: SKAction
@@ -122,9 +132,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        print("Corpo A: \(contact.bodyA.categoryBitMask)")
-        print("Corpo B: \(contact.bodyB.categoryBitMask)")
-        
         if(contact.bodyA.categoryBitMask == collisionValue.apple.rawValue ||
             contact.bodyB.categoryBitMask == collisionValue.apple.rawValue){
             
@@ -135,14 +142,52 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         else{
-            scene?.isPaused = true
             
-            let gameOverViewController = GameOverView()
-            gameOverViewController.scene = self.scene as? GameScene
-//            scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
-            self.gameViewController?.addChildViewController(gameOverViewController)
-            self.gameViewController?.view.addSubview(gameOverViewController.view)
+            self.gameOver()
         }
+    }
+    
+    func checkCollisionWithBorder() -> Bool{
+        
+        switch self.snake.currentDirection{
+            
+        case .up:
+            if((self.snake.head?.position.y)! + self.spaceSize.height >= (backgroundManager.topBorder?.position.y)!){
+                
+                return true
+            }
+            
+        case .down:
+            if((self.snake.head?.position.y)! - self.spaceSize.height <= (backgroundManager.bottomBorder?.position.y)!){
+                
+                return true
+            }
+            
+        case .right:
+            if((self.snake.head?.position.x)! + self.spaceSize.width >= (backgroundManager.rightBorder?.position.x)!){
+                
+                return true
+            }
+            
+        case .left:
+            if((self.snake.head?.position.x)! - self.spaceSize.width <= (backgroundManager.leftBorder?.position.x)!){
+                
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func gameOver(){
+        
+        scene?.isPaused = true
+        
+        let gameOverViewController = GameOverView()
+        gameOverViewController.scene = self.scene as? GameScene
+        
+        self.gameViewController?.addChildViewController(gameOverViewController)
+        self.gameViewController?.view.addSubview(gameOverViewController.view)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
