@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    weak var gameViewController: GameViewController? = nil
+    
     let backgroundManager = BackgroundManager()
     let appleManager = AppleManager()
     var snake = Snake()
@@ -121,7 +123,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let gameOverViewController = GameOverView()
             gameOverViewController.scene = self.scene as? GameScene
-            scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
+//            scene?.view?.window?.rootViewController?.present(gameOverViewController, animated: true, completion: nil)
+            self.gameViewController?.addChildViewController(gameOverViewController)
+            self.gameViewController?.view.addSubview(gameOverViewController.view)
         }
     }
     
