@@ -64,7 +64,7 @@ class BackgroundManager{
             ))
             newBorder.position = CGPoint(
                 x: sceneSize.width / 40 + newBorder.size.width / 2,
-                y: sceneSize.height - sceneSize.height / 20
+                y: sceneSize.height - sceneSize.height / 20 + newBorder.size.height / 2
             )
             hitbox = SKSpriteNode(color: SKColor.clear,
                                   size: CGSize(width: newBorder.size.width,
@@ -82,7 +82,7 @@ class BackgroundManager{
             
             newBorder.position = CGPoint(
                 x: sceneSize.width / 40 + newBorder.size.width / 2,
-                y: sceneSize.height / 20
+                y: sceneSize.height / 20 - newBorder.size.height / 2
             )
             hitbox = SKSpriteNode(color: SKColor.clear,
                                   size: CGSize(width: newBorder.size.width,
@@ -99,7 +99,7 @@ class BackgroundManager{
                 width: 3.0, height: UIScreen.main.bounds.height / 20 * 18))
             
             newBorder.position = CGPoint(
-                x: sceneSize.width / 40 + newBorder.size.width / 2,
+                x: sceneSize.width / 40 - newBorder.size.width / 2,
                 y: sceneSize.height / 20 + newBorder.size.height / 2
             )
             hitbox = SKSpriteNode(color: SKColor.clear,
