@@ -73,6 +73,7 @@ class BackgroundManager{
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: 0, y: hitbox.size.height / 2)
+             hitbox.zRotation = 0
             newBorder.addChild(hitbox)
             
         case .bottom:
@@ -90,6 +91,7 @@ class BackgroundManager{
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: 0, y: -hitbox.size.height / 2)
+            hitbox.zRotation = 0
             newBorder.addChild(hitbox)
             
         case .left:
@@ -107,6 +109,7 @@ class BackgroundManager{
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: -hitbox.size.width / 2, y: 0)
+            hitbox.zRotation = 0
             newBorder.addChild(hitbox)
             
         case .right:
@@ -124,6 +127,7 @@ class BackgroundManager{
             hitbox.physicsBody = SKPhysicsBody(rectangleOf: hitbox.size)
             hitbox.physicsBody?.categoryBitMask = collisionValue.border.rawValue
             hitbox.position = CGPoint(x: hitbox.size.width / 2, y: 0)
+            hitbox.zRotation = 0
             newBorder.addChild(hitbox)
         }
         

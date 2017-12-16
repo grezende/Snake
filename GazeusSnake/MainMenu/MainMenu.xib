@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Noteworthy.ttc">
+            <string>Noteworthy-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenu" customModule="GazeusSnake" customModuleProvider="target">
+            <connections>
+                <outlet property="easyButton" destination="Nfl-sH-fI6" id="ijQ-64-grX"/>
+                <outlet property="hardButton" destination="AQ2-H9-WtO" id="HvG-SJ-oci"/>
+                <outlet property="mediumButton" destination="fyw-bX-nuz" id="mng-E0-3d4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9O-cQ-MU2">
+                    <rect key="frame" x="202.5" y="20" width="163" height="112"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="70"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyw-bX-nuz">
+                    <rect key="frame" x="227" y="189" width="114" height="64"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="Médio"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQ2-H9-WtO">
+                    <rect key="frame" x="399" y="189" width="113.5" height="64"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="Maluco"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-sH-fI6">
+                    <rect key="frame" x="52" y="189" width="113.5" height="64"/>
+                    <color key="backgroundColor" red="0.91468682251677924" green="1" blue="0.98421261760191692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="Fácil"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.70118178934010156" blue="0.0067690555814286764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AQ2-H9-WtO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="0BJ-BQ-PJE"/>
+                <constraint firstItem="u9O-cQ-MU2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="936-ft-fZK"/>
+                <constraint firstItem="u9O-cQ-MU2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="D2n-8D-hAt"/>
+                <constraint firstItem="Nfl-sH-fI6" firstAttribute="top" secondItem="fyw-bX-nuz" secondAttribute="top" id="Du5-ax-K6f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AQ2-H9-WtO" secondAttribute="trailing" constant="55.5" id="EAJ-ML-Lkr"/>
+                <constraint firstItem="Nfl-sH-fI6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="KEW-B9-DxD"/>
+                <constraint firstItem="AQ2-H9-WtO" firstAttribute="top" secondItem="fyw-bX-nuz" secondAttribute="top" id="KJo-ER-obt"/>
+                <constraint firstItem="fyw-bX-nuz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="NtM-cp-j92"/>
+                <constraint firstItem="fyw-bX-nuz" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="cMG-Ay-isn"/>
+                <constraint firstItem="fyw-bX-nuz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fHD-Z6-jL4"/>
+                <constraint firstItem="fyw-bX-nuz" firstAttribute="leading" secondItem="Nfl-sH-fI6" secondAttribute="trailing" constant="61.5" id="nKa-yE-4ZC"/>
+                <constraint firstItem="AQ2-H9-WtO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="rcy-XY-3sS"/>
+                <constraint firstItem="Nfl-sH-fI6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="vgz-Ib-tJP"/>
+                <constraint firstItem="fyw-bX-nuz" firstAttribute="top" secondItem="u9O-cQ-MU2" secondAttribute="bottom" constant="57" id="zNh-4d-KOi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

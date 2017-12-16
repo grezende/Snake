@@ -26,7 +26,6 @@ class GameOverView: UIViewController {
         scene?.score = 0
         scene?.backgroundManager.updateScoreLabel(score: (scene?.score)!)
         scene?.isPaused = false
-//        self.dismiss(animated: true, completion: nil)
         self.removeFromParentViewController()
         self.view.removeFromSuperview()
     }

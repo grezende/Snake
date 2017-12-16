@@ -13,6 +13,7 @@ import GameplayKit
 class GameViewController: UIViewController {
 
     var scene: GameScene!
+    var difficulty: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class GameViewController: UIViewController {
             scene.scaleMode = .aspectFill
             
             scene.gameViewController = self
+            scene.difficulty = self.difficulty
             
             // Present the scene
             view.presentScene(scene)

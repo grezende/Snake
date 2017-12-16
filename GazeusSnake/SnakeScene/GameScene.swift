@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let appleManager = AppleManager()
     var snake = Snake()
     var score = 0
+    var difficulty: Int = 1
     
     override func didMove(to view: SKView) {
         
@@ -97,7 +98,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.snake.moveSnake()
         }
         
-        let waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
+        let waitTimeBeetweenMovements: SKAction
+        
+        switch self.difficulty {
+            
+        case 0:
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.3)
+            
+        case 1:
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
+       
+        case 2:
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.05)
+            
+        default:
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
+        }
         
         let moveSequence = SKAction.sequence([singleMovement, waitTimeBeetweenMovements])
         
