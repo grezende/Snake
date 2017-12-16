@@ -119,7 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
        
         case 2:
-            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.05)
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.07)
             
         default:
             waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
