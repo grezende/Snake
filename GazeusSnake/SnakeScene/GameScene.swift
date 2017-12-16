@@ -190,6 +190,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.gameViewController?.view.addSubview(gameOverViewController.view)
     }
     
+    func reloadGame(){
+        
+        self.snake.destroySnake(scene: self)
+        self.snake.setSnake(scene: self)
+        self.score = 0
+        self.backgroundManager.updateScoreLabel(score: self.score)
+        self.isPaused = false
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }

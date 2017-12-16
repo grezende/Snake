@@ -21,11 +21,7 @@ class GameOverView: UIViewController {
     
     @objc func retryButtonClicked(sender: UIButton){
         
-        scene?.snake.destroySnake(scene: scene!)
-        scene?.snake.setSnake(scene: scene!)
-        scene?.score = 0
-        scene?.backgroundManager.updateScoreLabel(score: (scene?.score)!)
-        scene?.isPaused = false
+        self.scene?.reloadGame()
         self.removeFromParentViewController()
         self.view.removeFromSuperview()
     }
