@@ -19,6 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0
     var difficulty: Int = 1
     var spaceSize = CGSize(width: 0, height: 0)
+    var tapToStart = false
     
     override func didMove(to view: SKView) {
         
@@ -26,6 +27,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.spaceSize = CGSize(width: self.size.width / 40,
                                 height: self.size.height / 20)
+        
+        self.isPaused = true
        
         backgroundManager.setBackgroundImage(scene: self.scene as! GameScene)
         
@@ -40,6 +43,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.setUpSwipeDetectors()
         
         appleManager.setApple(scene: self, snake: self.snake)
+        
+        self.tapToStart = true
     }
     
     func setUpSwipeDetectors(){
@@ -119,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
        
         case 2:
-            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.07)
+            waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.05)
             
         default:
             waitTimeBeetweenMovements = SKAction.wait(forDuration: 0.1)
@@ -127,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let moveSequence = SKAction.sequence([singleMovement, waitTimeBeetweenMovements])
         
-        self.run(SKAction.repeatForever(moveSequence))
+        self.run(SKAction.repeatForever(moveSequence), withKey: "snakeMovementAction")
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -192,15 +197,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func reloadGame(){
         
+        self.removeAction(forKey: "snakeMovementAction")
         self.snake.destroySnake(scene: self)
         self.snake.setSnake(scene: self)
         self.score = 0
         self.backgroundManager.updateScoreLabel(score: self.score)
-        self.isPaused = false
+        self.startSnakeMovement()
+        self.tapToStart = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        if(self.tapToStart){
+            
+            self.isPaused = false
+            self.tapToStart = false
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
