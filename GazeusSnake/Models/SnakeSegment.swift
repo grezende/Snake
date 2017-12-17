@@ -21,6 +21,7 @@ class SnakeSegment: SKSpriteNode{
         self.physicsBody = SKPhysicsBody(rectangleOf: hitbox)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = collisionValue.snakeSegment.rawValue
+        self.physicsBody?.collisionBitMask = 0
     }
     
     required init?(coder aDecoder: NSCoder) {

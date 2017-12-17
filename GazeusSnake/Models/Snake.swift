@@ -69,7 +69,6 @@ class Snake{
             
         case directions.left:
             
-            head?.yScale *= -1
             head?.zRotation = CGFloat(Double.pi)
             head?.position.x -= self.segmentSize.width
             
