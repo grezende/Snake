@@ -15,6 +15,8 @@ class MainMenu: UIViewController {
     @IBOutlet weak var mediumButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
     
+    var gameVC: GameViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,14 +32,12 @@ class MainMenu: UIViewController {
     
     @objc func difficultySelected(sender: UIButton){
         
-        let gameVC: GameViewController
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        gameVC = storyboard.instantiateViewController(withIdentifier: "gameVC") as! GameViewController
+        gameVC = storyboard.instantiateViewController(withIdentifier: "gameVC") as? GameViewController
         
-        gameVC.difficulty = sender.tag
+        gameVC?.difficulty = sender.tag
         
-        present(gameVC, animated: true, completion: nil)
+        present(gameVC!, animated: true, completion: nil)
     }
 }
