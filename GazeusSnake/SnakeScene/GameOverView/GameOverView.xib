@@ -49,7 +49,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontuação: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poG-uY-Bn5">
-                            <rect key="frame" x="110" y="71" width="102.5" height="19"/>
+                            <rect key="frame" x="101.5" y="71" width="119.5" height="19"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                         <constraint firstItem="fN7-kZ-d6S" firstAttribute="top" secondItem="Aum-FY-d4t" secondAttribute="top" constant="8" id="Ux7-1U-gYC"/>
                         <constraint firstItem="poG-uY-Bn5" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" constant="-9.5" id="VjX-5P-qAc"/>
                         <constraint firstItem="dtR-0z-cSH" firstAttribute="top" secondItem="4Br-67-miH" secondAttribute="top" id="WcO-eD-jxF"/>
-                        <constraint firstItem="poG-uY-Bn5" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.3" id="ZOC-dg-hXf"/>
+                        <constraint firstItem="poG-uY-Bn5" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.35" id="ZOC-dg-hXf"/>
                         <constraint firstItem="dtR-0z-cSH" firstAttribute="height" secondItem="4Br-67-miH" secondAttribute="height" id="x01-FC-3rL"/>
                         <constraint firstItem="poG-uY-Bn5" firstAttribute="height" secondItem="Aum-FY-d4t" secondAttribute="height" multiplier="0.1" id="zYt-n1-bzI"/>
                     </constraints>

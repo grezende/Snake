@@ -32,7 +32,7 @@ class Snake{
         self.head = SnakeHead(color: SKColor.green, size: self.segmentSize)
         
         self.head?.position = CGPoint(
-            x: scene.size.width / 4 + (self.head?.size.width)! / 2,
+            x: 10 * self.segmentSize.width + (self.head?.size.width)! / 2,
             y: scene.size.height / 2 + (self.head?.size.height)! / 2
         )
         

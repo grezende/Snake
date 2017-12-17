@@ -135,23 +135,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.run(SKAction.repeatForever(moveSequence), withKey: "snakeMovementAction")
     }
     
-    func didBegin(_ contact: SKPhysicsContact) {
-        
-        if(contact.bodyA.categoryBitMask == collisionValue.apple.rawValue ||
-            contact.bodyB.categoryBitMask == collisionValue.apple.rawValue){
-            
-            self.score += 1
-            backgroundManager.updateScoreLabel(score: self.score)
-            appleManager.resetApple(scene: self)
-            self.snake.addSegment(scene: self)
-        }
-        
-        else{
-            
-            self.gameOver()
-        }
-    }
-    
     func checkCollisionWithBorder() -> Bool{
         
         switch self.snake.currentDirection{
@@ -217,6 +200,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             self.isPaused = false
             self.tapToStart = false
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        if(contact.bodyA.categoryBitMask == collisionValue.apple.rawValue ||
+            contact.bodyB.categoryBitMask == collisionValue.apple.rawValue){
+            
+            self.score += 1
+            backgroundManager.updateScoreLabel(score: self.score)
+            appleManager.resetApple(scene: self)
+            self.snake.addSegment(scene: self)
+        }
+            
+        else{
+            
+            self.gameOver()
         }
     }
     
