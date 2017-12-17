@@ -18,10 +18,11 @@ class AppleManager{
     
     func setApple(scene: GameScene, snake: Snake){
         
+        let appleSize = scene.spaceSize
+        
         self.snake = snake
-        self.apple = Apple(color: SKColor.red, size: CGSize(width: scene.size.width / 40,
-                                                            height: scene.size.height / 20))
-        print("Tamanho da maça: \(apple?.size.height)")
+        self.apple = Apple(color: SKColor.red, size: appleSize)
+        
         generateRandomPosition(scene: scene)
         
         while checkSnakePosition() == false{
@@ -35,9 +36,7 @@ class AppleManager{
     private func generateRandomPosition(scene: GameScene){
         
         randomPositionX = (CGFloat(arc4random_uniform(36)) + 2) * scene.size.width / 40
-        print("Posicao x da maça: \(randomPositionX)")
         randomPositionY = (CGFloat(arc4random_uniform(16)) + 2) * scene.size.height / 20
-        print("Posicao y da maça: \(randomPositionY)")
         
         randomPositionX += (self.apple?.size.width)! / 2
         randomPositionY += (self.apple?.size.height)! / 2

@@ -8,8 +8,7 @@
 
 enum collisionValue: UInt32{
     
-    case border = 1
-    case snakeHead = 2
-    case snakeSegment = 3
-    case apple = 4
+    case snakeHead = 1
+    case snakeSegment = 2
+    case apple = 3
 }
