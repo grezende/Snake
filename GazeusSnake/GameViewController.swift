@@ -58,4 +58,10 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func returnToMenu(){
+        
+        self.scene.view?.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
+    }
 }

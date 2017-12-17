@@ -206,6 +206,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.tapToStart = true
     }
     
+    func returnToMenu(){
+        
+        self.gameViewController?.returnToMenu()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if(self.tapToStart){

@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverView" customModule="GazeusSnake" customModuleProvider="target">
             <connections>
+                <outlet property="menuButton" destination="dtR-0z-cSH" id="o9P-zk-OSu"/>
                 <outlet property="retryButton" destination="4Br-67-miH" id="NFx-ig-SsL"/>
+                <outlet property="scoreLabel" destination="poG-uY-Bn5" id="cQi-HF-SIY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,28 +26,50 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-FY-d4t">
                     <rect key="frame" x="113.5" y="64" width="341" height="192"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Putz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-kZ-d6S">
-                            <rect key="frame" x="121" y="25" width="100.5" height="55"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Br-67-miH">
-                            <rect key="frame" x="103" y="120" width="136" height="35"/>
-                            <color key="backgroundColor" red="1" green="0.66592100419317768" blue="0.29006879003715524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="192.5" y="120" width="102.5" height="35"/>
+                            <color key="backgroundColor" red="0.9146868225" green="1" blue="0.98421261760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <state key="normal" title="De novo">
                                 <color key="titleColor" red="0.22318895752741086" green="0.0059271195550584244" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtR-0z-cSH">
+                            <rect key="frame" x="41" y="120" width="102.5" height="35"/>
+                            <color key="backgroundColor" red="0.9146868225" green="1" blue="0.98421261760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="Menu">
+                                <color key="titleColor" red="0.0" green="0.070588235289999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Putz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-kZ-d6S">
+                            <rect key="frame" x="121" y="8" width="100.5" height="55"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontuação: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poG-uY-Bn5">
+                            <rect key="frame" x="110" y="71" width="102.5" height="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4Br-67-miH" secondAttribute="trailing" constant="46" id="6VA-Ir-Amr"/>
                         <constraint firstAttribute="bottom" secondItem="4Br-67-miH" secondAttribute="bottom" constant="37" id="8hz-UJ-5ig"/>
                         <constraint firstItem="fN7-kZ-d6S" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" id="DSB-pP-jcO"/>
-                        <constraint firstItem="4Br-67-miH" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.4" id="JFW-84-tES"/>
-                        <constraint firstItem="4Br-67-miH" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" id="OBT-pq-Fhj"/>
-                        <constraint firstItem="fN7-kZ-d6S" firstAttribute="top" secondItem="Aum-FY-d4t" secondAttribute="top" constant="25" id="Ux7-1U-gYC"/>
+                        <constraint firstItem="dtR-0z-cSH" firstAttribute="leading" secondItem="Aum-FY-d4t" secondAttribute="leading" constant="41" id="I1F-by-Tt6"/>
+                        <constraint firstItem="4Br-67-miH" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.3" id="JFW-84-tES"/>
+                        <constraint firstItem="poG-uY-Bn5" firstAttribute="top" secondItem="fN7-kZ-d6S" secondAttribute="bottom" constant="8" id="KPv-eT-baC"/>
+                        <constraint firstItem="dtR-0z-cSH" firstAttribute="width" secondItem="4Br-67-miH" secondAttribute="width" id="R4F-xT-u45"/>
+                        <constraint firstItem="fN7-kZ-d6S" firstAttribute="top" secondItem="Aum-FY-d4t" secondAttribute="top" constant="8" id="Ux7-1U-gYC"/>
+                        <constraint firstItem="poG-uY-Bn5" firstAttribute="centerX" secondItem="Aum-FY-d4t" secondAttribute="centerX" constant="-9.5" id="VjX-5P-qAc"/>
+                        <constraint firstItem="dtR-0z-cSH" firstAttribute="top" secondItem="4Br-67-miH" secondAttribute="top" id="WcO-eD-jxF"/>
+                        <constraint firstItem="poG-uY-Bn5" firstAttribute="width" secondItem="Aum-FY-d4t" secondAttribute="width" multiplier="0.3" id="ZOC-dg-hXf"/>
+                        <constraint firstItem="dtR-0z-cSH" firstAttribute="height" secondItem="4Br-67-miH" secondAttribute="height" id="x01-FC-3rL"/>
+                        <constraint firstItem="poG-uY-Bn5" firstAttribute="height" secondItem="Aum-FY-d4t" secondAttribute="height" multiplier="0.1" id="zYt-n1-bzI"/>
                     </constraints>
                 </view>
             </subviews>
