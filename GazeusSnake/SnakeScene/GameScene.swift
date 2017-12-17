@@ -173,6 +173,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let gameOverViewController = GameOverView()
         gameOverViewController.scene = self.scene as? GameScene
+        gameOverViewController.view.frame.origin.x = self.size.width / 2 - gameOverViewController.view.frame.size.width / 2
+        gameOverViewController.view.frame.origin.y = self.size.height / 2 - gameOverViewController.view.frame.size.height / 2
         
         self.gameViewController?.addChildViewController(gameOverViewController)
         self.gameViewController?.view.addSubview(gameOverViewController.view)

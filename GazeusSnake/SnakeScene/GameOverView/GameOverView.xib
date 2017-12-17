@@ -27,7 +27,7 @@
                     <rect key="frame" x="113.5" y="64" width="341" height="192"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Br-67-miH">
-                            <rect key="frame" x="192.5" y="120" width="102.5" height="35"/>
+                            <rect key="frame" x="193.5" y="120.5" width="101.5" height="35"/>
                             <color key="backgroundColor" red="0.9146868225" green="1" blue="0.98421261760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <state key="normal" title="De novo">
@@ -35,7 +35,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtR-0z-cSH">
-                            <rect key="frame" x="41" y="120" width="102.5" height="35"/>
+                            <rect key="frame" x="41" y="120.5" width="101.5" height="35"/>
                             <color key="backgroundColor" red="0.9146868225" green="1" blue="0.98421261760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <state key="normal" title="Menu">
@@ -43,13 +43,13 @@
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Putz!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-kZ-d6S">
-                            <rect key="frame" x="121" y="8" width="100.5" height="55"/>
+                            <rect key="frame" x="121" y="8.5" width="100.5" height="55"/>
                             <fontDescription key="fontDescription" type="system" pointSize="46"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontuação: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poG-uY-Bn5">
-                            <rect key="frame" x="101.5" y="71" width="119.5" height="19"/>
+                            <rect key="frame" x="101.5" y="71.5" width="119.5" height="18.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Aum-FY-d4t" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4in-3e-Opk"/>
                 <constraint firstItem="Aum-FY-d4t" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5W2-Ar-lQA"/>
