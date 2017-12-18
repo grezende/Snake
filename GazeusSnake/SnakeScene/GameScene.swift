@@ -185,6 +185,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.removeAction(forKey: "snakeMovementAction")
         self.snake.destroySnake(scene: self)
         self.snake.setSnake(scene: self)
+        self.appleManager.resetApple(scene: self)
         self.score = 0
         self.backgroundManager.updateScoreLabel(score: self.score)
         self.startSnakeMovement()
