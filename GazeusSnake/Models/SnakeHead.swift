@@ -24,7 +24,7 @@ class SnakeHead: SKSpriteNode{
         
         let collider = SKSpriteNode(
             color: SKColor.clear,
-            size: CGSize(width: 1, height: self.size.height / 2 )
+            size: CGSize(width: self.size.width / 2, height: self.size.height / 2 )
         )
         collider.position = CGPoint(x: 0,
                                     y: self.size.height / 2 - collider.size.height)

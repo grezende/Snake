@@ -11,24 +11,17 @@ import SpriteKit
 class AppleManager{
     
     var apple: Apple?
-    var snake: Snake?
     
     var randomPositionX: CGFloat = 0
     var randomPositionY: CGFloat = 0
     
-    func setApple(scene: GameScene, snake: Snake){
+    func setApple(scene: GameScene){
         
         let appleSize = scene.spaceSize
         
-        self.snake = snake
         self.apple = Apple(color: SKColor.red, size: appleSize)
         
         generateRandomPosition(scene: scene)
-        
-        while checkSnakePosition() == false{
-            
-            self.generateRandomPosition(scene: scene)
-        }
         
         scene.addChild(self.apple!)
     }
@@ -47,26 +40,6 @@ class AppleManager{
     func resetApple(scene: GameScene){
         
         apple?.removeFromParent()
-        self.setApple(scene: scene, snake: self.snake!)
-    }
-    
-    private func checkSnakePosition() -> Bool{
-        
-        if(self.apple?.position.x != self.snake?.head?.position.x &&
-            self.apple?.position.y != self.snake?.head?.position.y){
-            
-            for s in (self.snake?.segments)!{
-                
-                if(self.apple?.position.x == s.position.x &&
-                    self.apple?.position.y == s.position.y){
-                    
-                    return false
-                }
-            }
-            return true
-        }
-        else{
-            return false
-        }
+        self.setApple(scene: scene)
     }
 }

@@ -14,7 +14,7 @@ class Apple: SKSpriteNode{
         
         super.init(texture: texture, color: color, size: size)
         
-        let hitbox = CGSize(width: 3 * self.size.width / 4, height: 3 * self.size.height / 4)
+        let hitbox = CGSize(width: self.size.width / 2, height: self.size.height / 2)
         
         self.zPosition = layer.objects.rawValue
         self.physicsBody = SKPhysicsBody(rectangleOf: hitbox)

@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.setUpSwipeDetectors()
         
-        appleManager.setApple(scene: self, snake: self.snake)
+        appleManager.setApple(scene: self)
         
         self.tapToStart = true
     }
@@ -208,8 +208,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        if(contact.bodyA.categoryBitMask == collisionValue.apple.rawValue ||
-            contact.bodyB.categoryBitMask == collisionValue.apple.rawValue){
+        if((contact.bodyA.categoryBitMask == collisionValue.apple.rawValue && contact.bodyB.categoryBitMask == collisionValue.snakeHead.rawValue) ||
+            (contact.bodyA.categoryBitMask == collisionValue.snakeHead.rawValue &&
+            contact.bodyB.categoryBitMask == collisionValue.apple.rawValue)){
             
             self.score += 1
             backgroundManager.updateScoreLabel(score: self.score)
@@ -217,8 +218,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.snake.addSegment(scene: self)
         }
             
-        else{
+        else if((contact.bodyA.categoryBitMask == collisionValue.apple.rawValue && contact.bodyB.categoryBitMask == collisionValue.snakeSegment.rawValue) ||
+            (contact.bodyA.categoryBitMask == collisionValue.snakeSegment.rawValue &&
+                contact.bodyB.categoryBitMask == collisionValue.apple.rawValue)){
             
+            self.appleManager.resetApple(scene: self)
+        }
+            
+        else{
             self.gameOver()
         }
     }
